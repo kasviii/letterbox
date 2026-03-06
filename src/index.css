@@ -1,0 +1,108 @@
+:root {
+  /* Pastel palette */
+  --sage: #a8b89a;
+  --sage-light: #c8d8bc;
+  --sage-dark: #7a9068;
+  --blush: #e8c4c4;
+  --blush-light: #f5e0e0;
+  --blush-dark: #c89898;
+  --lavender: #c8b4c8;
+  --lavender-light: #e4d8e8;
+  --lavender-dark: #9a7aa0;
+
+  /* Neutrals */
+  --cream: #faf8f5;
+  --warm-white: #f5f2ee;
+  --parchment: #ede8e0;
+  --ink: #2c2825;
+  --ink-light: #5c544e;
+  --ink-muted: #9a8f88;
+
+  /* Fonts */
+  --font-ui: 'DM Sans', sans-serif;
+  --font-note: 'Lora', Georgia, serif;
+
+  /* Spacing */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+  --radius-pill: 100px;
+
+  /* Shadows */
+  --shadow-soft: 0 4px 20px rgba(44, 40, 37, 0.08);
+  --shadow-card: 0 8px 32px rgba(44, 40, 37, 0.12);
+  --shadow-lifted: 0 16px 48px rgba(44, 40, 37, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-ui);
+  background: var(--cream);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+button {
+  font-family: var(--font-ui);
+  cursor: pointer;
+}
+
+textarea, input, select {
+  font-family: var(--font-ui);
+}
+
+/* Shared utility classes */
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,0.35);
+  backdrop-filter: blur(8px);
+  color: var(--ink);
+  border: 1px solid rgba(255,255,255,0.5);
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  font-size: 0.88rem;
+  font-weight: 500;
+  margin-bottom: 28px;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.back-btn:hover {
+  background: rgba(255,255,255,0.55);
+  transform: translateX(-2px);
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-12px) rotate(2deg); }
+  66% { transform: translateY(6px) rotate(-1.5deg); }
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.85); opacity: 0; }
+  70% { transform: scale(1.04); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}

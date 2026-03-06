@@ -1,0 +1,338 @@
+.mynotes-page {
+  min-height: 100vh;
+  background: var(--cream);
+  position: relative;
+  overflow: hidden;
+}
+
+.mynotes-page::before {
+  content: '';
+  position: fixed;
+  top: -100px;
+  right: -80px;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, var(--sage-light) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.mynotes-page::after {
+  content: '';
+  position: fixed;
+  bottom: -60px;
+  left: -60px;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, var(--lavender-light) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.55;
+}
+
+.mynotes-container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 24px 80px;
+  position: relative;
+  z-index: 5;
+  animation: fadeUp 0.5s ease both;
+}
+
+.mynotes-header {
+  margin-bottom: 32px;
+}
+
+.mynotes-title {
+  font-family: var(--font-note);
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  margin-bottom: 5px;
+}
+
+.mynotes-subtitle {
+  font-size: 0.92rem;
+  color: var(--ink-muted);
+}
+
+/* Loading skeleton */
+.skeleton-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.skeleton-card {
+  height: 90px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(90deg, var(--parchment) 25%, var(--warm-white) 50%, var(--parchment) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Empty state */
+.empty-state {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.empty-icon { font-size: 3rem; margin-bottom: 16px; }
+
+.empty-state h3 {
+  font-family: var(--font-note);
+  font-size: 1.4rem;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.empty-state p {
+  font-size: 0.95rem;
+  color: var(--ink-muted);
+  margin-bottom: 24px;
+}
+
+.empty-write-btn {
+  background: var(--ink);
+  color: var(--cream);
+  border: none;
+  padding: 12px 28px;
+  border-radius: var(--radius-pill);
+  font-size: 0.92rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.empty-write-btn:hover {
+  background: var(--ink-light);
+  transform: translateY(-1px);
+}
+
+/* Notes list */
+.notes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.note-preview-card {
+  background: white;
+  border: 1.5px solid var(--parchment);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  cursor: pointer;
+  transition: all 0.22s;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.note-preview-card:hover {
+  border-color: var(--lavender);
+  box-shadow: var(--shadow-card);
+  transform: translateY(-2px);
+}
+
+.note-preview-card:hover .delete-btn {
+  opacity: 1;
+}
+
+.note-preview-text {
+  font-family: var(--font-note);
+  font-size: 0.95rem;
+  color: var(--ink);
+  line-height: 1.55;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  padding-right: 28px;
+}
+
+.note-preview-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.meta-date {
+  font-size: 0.78rem;
+  color: var(--ink-muted);
+}
+
+.meta-mood {
+  font-size: 0.74rem;
+  padding: 2px 10px;
+  border-radius: var(--radius-pill);
+  font-weight: 500;
+}
+
+.meta-badge {
+  font-size: 0.74rem;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+}
+
+.badge-reply {
+  background: var(--sage-light);
+  color: var(--sage-dark);
+}
+
+.badge-flower {
+  background: var(--blush-light);
+  color: var(--blush-dark);
+}
+
+.badge-waiting {
+  background: var(--lavender-light);
+  color: var(--lavender-dark);
+}
+
+/* Delete button */
+.delete-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: none;
+  border: 1.5px solid var(--parchment);
+  color: var(--ink-muted);
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  opacity: 0;
+  transition: all 0.2s;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.delete-btn:hover {
+  background: #fee;
+  border-color: #c84040;
+  color: #c84040;
+}
+
+/* Detail view */
+.note-detail-view {
+  animation: fadeUp 0.4s ease both;
+}
+
+.detail-back {
+  background: none;
+  border: 1.5px solid var(--parchment);
+  color: var(--ink-muted);
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 24px;
+  transition: all 0.2s;
+}
+
+.detail-back:hover {
+  border-color: var(--lavender);
+  color: var(--ink);
+}
+
+.note-full-card {
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-lifted);
+}
+
+.note-full-text {
+  font-family: var(--font-note);
+  font-size: 1.15rem;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  margin-bottom: 20px;
+}
+
+.note-full-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0.6;
+  font-size: 0.82rem;
+  font-family: var(--font-ui);
+}
+
+/* Flower received */
+.flowers-received {
+  background: var(--blush-light);
+  border: 1.5px solid var(--blush);
+  border-radius: var(--radius-md);
+  padding: 18px 22px;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.flowers-received-icon { font-size: 1.5rem; }
+
+.flowers-received-text {
+  font-size: 0.92rem;
+  color: var(--blush-dark);
+  font-weight: 500;
+}
+
+/* Reply received */
+.reply-received-card {
+  background: white;
+  border: 1.5px solid var(--sage-light);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  margin-bottom: 14px;
+}
+
+.reply-received-header {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--sage-dark);
+  margin-bottom: 12px;
+}
+
+.reply-received-text {
+  font-family: var(--font-note);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--ink);
+  background: var(--cream);
+  padding: 16px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 8px;
+}
+
+.reply-received-date {
+  font-size: 0.78rem;
+  color: var(--ink-muted);
+  text-align: right;
+  font-style: italic;
+}
+
+.waiting-reply {
+  background: var(--lavender-light);
+  border: 1.5px solid var(--lavender);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  font-size: 0.9rem;
+  color: var(--lavender-dark);
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 14px;
+}
+
+@media (max-width: 600px) {
+  .mynotes-container { padding: 24px 16px 60px; }
+  .note-full-card { padding: 28px 22px; }
+}

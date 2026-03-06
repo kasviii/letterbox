@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+# 📬 Letterbox
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Live at → [write-a-note-fdbf7.web.app](https://write-a-note-fdbf7.web.app)**
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+Letterbox is a quiet corner of the internet where you can leave a note for a stranger — and maybe find one that feels like it was written just for you.
 
-### `npm start`
+No accounts. No names. No profiles. Just people releasing what they're carrying, and strangers receiving it with kindness.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+I built this during a study break when I probably should have been doing something else. It started as a little experiment and somehow turned into something I actually like.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## What you can do
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Write a note** — pick a paper style, tag your mood, and release your thoughts into the void. Someone out there will find it.
+- **Open a letter** — floating envelopes drift across the screen. Click one. Read what a stranger left behind.
+- **Leave a flower 🌸** — if you don't have words but you want someone to know you were there, just leave a flower. Silent empathy.
+- **Reply** — if the writer is open to it, you can send one kind message back.
+- **Pass it on** — release a note back into circulation for the next person to find.
+- **My Notes** — check in on your own notes, see if anyone replied or left you a flower.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Built with
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- React
+- Firebase (Firestore + Auth + Hosting)
+- A lot of tabs open
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+*Notes disappear after 30 days. Everything is anonymous.*
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
